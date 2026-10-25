@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KasuwaDirect - Kasuwa to Your Doorstep</title>
+  <style>
+    :root {
+      --primary: #16a34a; /* Fresh green for local delivery */
+      --primary-hover: #15803d;
+      --accent: #f59e0b;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --light-text: #64748b;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header & Nav */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #16a34a 0%, #065f46 100%);
+      color: #fff;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1100px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card Styling */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      height: 90px;
+    }
+
+    /* Features / How It Works */
+    .step-list {
+      list-style: none;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .step-number {
+      background-color: var(--accent);
+      color: #fff;
+      font-weight: bold;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .step-text h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text p {
+      font-size: 0.9rem;
+      color: var(--light-text);
+    }
+
+    /* Status Box */
+    .price-box {
+      background-color: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--light-text);
+      font-size: 0.9rem;
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Kasuwa<span>Direct</span></a>
+      <a href="#order" class="btn-primary">Order Now</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Kasuwa Straight to Your Doorstep</h1>
+    <p>Tell us what you need from Kasuwa (market items, groceries, packages), and our riders will purchase and deliver it straight to your home.</p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="grid-2">
+      
+      <!-- Left Column: How It Works -->
+      <div class="card">
+        <h2>How It Works</h2>
+        <ul class="step-list">
+          <li class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h3>Send Your Shopping List</h3>
+              <p>Fill out the delivery request form with details of the items you need from Kasuwa.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h3>We Pick & Purchase</h3>
+              <p>Our experienced rider goes straight to Kasuwa to pick up high-quality items for you.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h3>Fast Doorstep Delivery</h3>
+              <p>We deliver right to your location and you pay on delivery or via digital transfer.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="price-box">
+          ⚡ Flat local delivery fees start from ₦1,000 within the area!
+        </div>
+      </div>
+
+      <!-- Right Column: Order Form -->
+      <div class="card" id="order">
+        <h2>Request a Delivery</h2>
+        <form id="deliveryForm">
+          <div class="form-group">
+            <label for="fullName">Your Full Name</label>
+            <input type="text" id="fullName" placeholder="e.g. Ahmed Musa" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp Number</label>
+            <input type="tel" id="phone" placeholder="e.g. 08144424802" required />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Delivery Address (Doorstep Location)</label>
+            <input type="text" id="address" placeholder="Street name, landmark, house number" required />
+          </div>
+
+          <div class="form-group">
+            <label for="items">Kasuwa Items / Instructions</label>
+            <textarea id="items" placeholder="List items needed (e.g. 1 bag of rice, fresh tomatoes, 1 pack of salt...)" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 0.9rem;">
+            Submit Order via WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 KasuwaDirect. Fast & Reliable Doorstep Delivery Service.</p>
+  </footer>
+
+  <!-- JavaScript for WhatsApp Integration -->
+  <script>
+    document.getElementById('deliveryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('fullName').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const items = document.getElementById('items').value;
+
+      // Replace this with your business WhatsApp phone number (in international format without +)
+      const riderWhatsAppNumber = "08144424802"; 
+
+      // Format message for WhatsApp
+      const message = Hello KasuwaDirect! I want to place an order:%0A%0A +
+                      *Name:* ${encodeURIComponent(name)}%0A +
+                      *Phone:* ${encodeURIComponent(phone)}%0A +
+                      *Address:* ${encodeURIComponent(address)}%0A +
+                      *Items Needed:*%0A${encodeURIComponent(items)};
+
+      // Redirect user to WhatsApp chat with auto-filled message
+      window.open(https://wa.me/${riderWhatsAppNumber}?text=${message}, '_blank');
+    });
+  </script>
+</body>
